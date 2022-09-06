@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "bd0c6bfa-04ca-4499-bb87-c7481106bd6b",
+		"name": "Logique Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2335767"
+	},
+	"item": [
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "key",
+						"value": "{{key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Testing",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "test@test.com",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Jl. Test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "photos[0]",
+							"type": "file",
+							"src": "/C:/Users/agust/OneDrive/Pictures/738936hrTD1658376660.jpg"
+						},
+						{
+							"key": "photos[1]",
+							"type": "file",
+							"src": "/C:/Users/agust/OneDrive/Pictures/783289.jpg"
+						},
+						{
+							"key": "creditcard_type",
+							"value": "Flex",
+							"type": "text"
+						},
+						{
+							"key": "creditcard_number",
+							"value": "1234567891233456",
+							"type": "text"
+						},
+						{
+							"key": "creditcard_name",
+							"value": "testing name",
+							"type": "text"
+						},
+						{
+							"key": "creditcard_expired",
+							"value": "06/24",
+							"type": "text"
+						},
+						{
+							"key": "creditcard_cvv",
+							"value": "000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/user/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User List",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "User Detail",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "User Update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "key",
+						"value": "{{key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Testing",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test1@test.com",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Jl. Test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "creditcard_type",
+							"value": "Flex",
+							"type": "text"
+						},
+						{
+							"key": "creditcard_number",
+							"value": "1234567891233456",
+							"type": "text"
+						},
+						{
+							"key": "creditcard_name",
+							"value": "testing name",
+							"type": "text"
+						},
+						{
+							"key": "creditcard_expired",
+							"value": "06/24",
+							"type": "text"
+						},
+						{
+							"key": "creditcard_cvv",
+							"value": "000",
+							"type": "text"
+						},
+						{
+							"key": "photos[0]",
+							"type": "file",
+							"src": "/C:/Users/agust/OneDrive/Pictures/783289.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/user/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
