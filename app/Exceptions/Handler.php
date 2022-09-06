@@ -2,11 +2,14 @@
 
 namespace App\Exceptions;
 
+use App\Traits\ApiHandlerTrait;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
 class Handler extends ExceptionHandler
 {
+    use ApiHandlerTrait;
+
     /**
      * A list of exception types with their corresponding custom log levels.
      *

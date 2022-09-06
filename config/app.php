@@ -17,6 +17,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'auth_key' => env('AUTH_KEY', 'HiJhvL$T27@1u^%u86g'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -185,6 +187,7 @@ return [
         /*
          * Package Service Providers...
          */
+        'Intervention\Image\ImageServiceProvider',
 
         /*
          * Application Service Providers...
@@ -209,7 +212,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Image' => 'Intervention\Image\Facades\Image',
     ])->toArray(),
 
 ];
