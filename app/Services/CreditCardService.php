@@ -10,7 +10,7 @@ class CreditCardService implements CreditCardServices
 {
     public function store(User $user, array $creditCard): void
     {
-        $user->creditCard()->firstOrNew([
+        $card = $user->creditCard()->firstOrNew([
             'user_id' => $user->id
         ],
         [
@@ -20,6 +20,8 @@ class CreditCardService implements CreditCardServices
             'expired' => $creditCard['creditcard_expired'],
             'cvv'     => $creditCard['creditcard_cvv']
         ]);
+
+        $card->save();
 
         return;
     }
