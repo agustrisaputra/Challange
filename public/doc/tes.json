@@ -28,12 +28,11 @@
 						{
 							"key": "name",
 							"value": "Testing",
-							"type": "text",
-							"disabled": true
+							"type": "text"
 						},
 						{
 							"key": "email",
-							"value": "test@test.com",
+							"value": "test12@test.com",
 							"type": "text"
 						},
 						{
@@ -64,7 +63,8 @@
 						{
 							"key": "creditcard_number",
 							"value": "1234567891233456",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "creditcard_name",
@@ -100,7 +100,50 @@
 			"name": "User List",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "key",
+						"value": "{{key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/user/list?q=&ob=name&sb=asc&of=0&lt=10",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"list"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": ""
+						},
+						{
+							"key": "ob",
+							"value": "name"
+						},
+						{
+							"key": "sb",
+							"value": "asc"
+						},
+						{
+							"key": "of",
+							"value": "0"
+						},
+						{
+							"key": "lt",
+							"value": "10"
+						}
+					]
+				}
 			},
 			"response": []
 		},
@@ -108,14 +151,35 @@
 			"name": "User Detail",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "key",
+						"value": "{{key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/user/17",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"17"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "User Update",
 			"request": {
-				"method": "PATCH",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Accept",
@@ -132,13 +196,18 @@
 					"mode": "formdata",
 					"formdata": [
 						{
+							"key": "user_id",
+							"value": "19",
+							"type": "text"
+						},
+						{
 							"key": "name",
-							"value": "Testing",
+							"value": "Testing update",
 							"type": "text"
 						},
 						{
 							"key": "email",
-							"value": "test1@test.com",
+							"value": "test1@qtest.com",
 							"type": "text"
 						},
 						{
@@ -163,7 +232,7 @@
 						},
 						{
 							"key": "creditcard_name",
-							"value": "testing name",
+							"value": "testing nam",
 							"type": "text"
 						},
 						{
@@ -180,17 +249,21 @@
 							"key": "photos[0]",
 							"type": "file",
 							"src": "/C:/Users/agust/OneDrive/Pictures/783289.jpg"
+						},
+						{
+							"key": "_method",
+							"value": "patch",
+							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "{{base_url}}/user/register",
+					"raw": "{{base_url}}/user",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
-						"user",
-						"register"
+						"user"
 					]
 				}
 			},
